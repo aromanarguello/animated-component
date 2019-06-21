@@ -1,5 +1,6 @@
 import * as React from "react";
 import styled from "styled-components";
+import { FormInput } from "../";
 
 const StyledCard = styled.div`
   width: 500px;
@@ -9,16 +10,19 @@ const StyledCard = styled.div`
   text-align: center;
 `;
 
-const Header = styled.div``;
+const Header = styled.h1``;
 
 interface ICardProps {
   title: string;
 }
 
+const noop = () => {};
+
 const Card: React.FC<ICardProps> = ({ title }) => {
   return (
     <StyledCard>
       <Header>{title}</Header>
+      <FormInput onValueChange={noop} onButtonClick={noop} onEnter={noop} />
     </StyledCard>
   );
 };
