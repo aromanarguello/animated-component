@@ -36,12 +36,19 @@ const FormInput: React.FC<IFormInputProps> = ({
   onEnter,
   placeholder = "Enter something..."
 }) => {
+  const inputRef = React.useRef(null);
+
+  React.useEffect(() => {
+    inputRef.current.focus();
+  });
+
   return (
     <Container>
       <Form>
         <label>
           Text:
           <Input
+            ref={inputRef}
             data-testid="formInput"
             placeholder={placeholder}
             onKeyPress={onEnter}
