@@ -45,7 +45,9 @@ const FormInput: React.FC<IFormInputProps> = ({
             data-testid="formInput"
             placeholder={placeholder}
             onKeyPress={onEnter}
-            onChange={onValueChange}
+            onChange={(e: React.FormEvent<HTMLInputElement>) =>
+              onValueChange(e.target.value)
+            }
           />
         </label>
         <Button onClick={onButtonClick}>Submit</Button>

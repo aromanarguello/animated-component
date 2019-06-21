@@ -19,10 +19,16 @@ interface ICardProps {
 const noop = () => {};
 
 const Card: React.FC<ICardProps> = ({ title }) => {
+  const [inputValue, setInputValue] = React.useState("");
+  console.log(inputValue);
   return (
     <StyledCard>
       <Header>{title}</Header>
-      <FormInput onValueChange={noop} onButtonClick={noop} onEnter={noop} />
+      <FormInput
+        onValueChange={setInputValue}
+        onButtonClick={noop}
+        onEnter={noop}
+      />
     </StyledCard>
   );
 };
