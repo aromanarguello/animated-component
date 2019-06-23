@@ -15,12 +15,18 @@ const Header = styled.h1``
 const noop = () => {}
 
 const App: React.FC<any> = () => {
-  const [inputValue, setInputValue] = React.useState("")
-  const [isActive, setIsActive] = React.useState(false)
-  const [props, set] = useSpring(() => ({ opacity: 1 }))
+  const [inputValue, setInputValue] = React.useState("");
+  const [isActive, setIsActive] = React.useState(false);
+  const [props, set] = useSpring(() => ({
+    opacity: 1,
+    color: "green",
+    config: {
+      tension: 350,
+      friction: 200
+    }
+  }));
 
-  set({ opacity: isActive ? 1 : 0 })
-
+  set({ opacity: isActive ? 1 : 0 });
   return (
     <Layout>
       <Card width={500} height={150}>
