@@ -16,10 +16,12 @@ const FormInput: React.FC<IFormInputProps> = ({
   value,
   placeholder = "Enter something..."
 }) => {
-  const inputRef = React.useRef(null);
+  const inputRef = React.useRef<HTMLInputElement>(null);
 
   // React.useEffect(() => {
-  //   inputRef.current.focus();
+  //   if (inputRef && inputRef.current) {
+  //     inputRef.current.focus();
+  //   }
   // });
 
   return (

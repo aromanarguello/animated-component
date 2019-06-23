@@ -17,16 +17,21 @@ const noop = () => {};
 const App: React.FC<any> = () => {
   const [inputValue, setInputValue] = React.useState("");
   const [isActive, setIsActive] = React.useState(false);
+
   const [props, set] = useSpring(() => ({
     opacity: 1,
-    color: "green",
+    color: inputValue === "" ? "red" : "green",
     config: {
       tension: 350,
       friction: 200
     }
   }));
 
-  set({ opacity: isActive ? 1 : 0 });
+  set({
+    opacity: isActive ? 1 : 0,
+    color: inputValue === "" ? "red" : "green"
+  });
+
   return (
     <Layout>
       <Card width={500} height={150}>
@@ -39,7 +44,7 @@ const App: React.FC<any> = () => {
         />
       </Card>
       <animated.div style={props}>
-        <Notification />
+        <Notification msg={inputValue === "" ? "Enter Text" : "Success"} />
       </animated.div>
     </Layout>
   );

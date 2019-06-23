@@ -1,10 +1,10 @@
 import * as React from "react";
 import { Card } from "../";
 
-const Notification = () => {
+const Notification: React.FC<{ msg: string }> = ({ msg }) => {
   return (
     <Card width={150} height={50}>
-      <p>Success!</p>
+      <p>{msg}</p>
     </Card>
   );
 };
