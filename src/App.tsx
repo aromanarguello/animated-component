@@ -1,25 +1,25 @@
-import * as React from "react";
-import { Card, FormInput, Notification } from "./components";
-import { useSpring, animated } from "react-spring";
-import styled from "styled-components";
+import * as React from "react"
+import { Card, FormInput, Notification } from "./components"
+import { useSpring, animated } from "react-spring"
+import styled from "styled-components"
 
 const Layout = styled.div`
   width: 100vw;
   height: 100vh;
   display: flex;
   justify-content: center;
-`;
+`
 
-const Header = styled.h1``;
+const Header = styled.h1``
 
-const noop = () => {};
+const noop = () => {}
 
 const App: React.FC<any> = () => {
-  const [inputValue, setInputValue] = React.useState("");
-  const [isActive, setIsActive] = React.useState(false);
-  const [props, set] = useSpring(() => ({ opacity: 1 }));
+  const [inputValue, setInputValue] = React.useState("")
+  const [isActive, setIsActive] = React.useState(false)
+  const [props, set] = useSpring(() => ({ opacity: 1 }))
 
-  set({ opacity: isActive ? 1 : 0 });
+  set({ opacity: isActive ? 1 : 0 })
 
   return (
     <Layout>
@@ -36,7 +36,7 @@ const App: React.FC<any> = () => {
         <Notification />
       </animated.div>
     </Layout>
-  );
-};
+  )
+}
 
-export default App;
+export default App

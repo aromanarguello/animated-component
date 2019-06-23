@@ -1,10 +1,10 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 const Container = styled.div`
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-`;
-const Form = styled.form``;
+`
+const Form = styled.form``
 
 const Input = styled.input`
   height: 19px;
@@ -13,7 +13,7 @@ const Input = styled.input`
   border: 1px solid grey;
   border-right: 0;
   padding: 0;
-`;
+`
 
 const Button = styled.button`
   background-color: #64b5f6;
@@ -22,6 +22,6 @@ const Button = styled.button`
   color: white;
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
-`;
+`
 
-export { Container, Form, Input, Button };
+export { Container, Form, Input, Button }
