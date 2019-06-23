@@ -1,5 +1,5 @@
-import * as React from "react";
-import { Card } from "../";
+import * as React from "react"
+import { Card } from "../"
 
 const Notification = () => {
   return (
@@ -9,4 +9,4 @@ const Notification = () => {
   );
 };
 
-export default Notification;
+export default Notification
