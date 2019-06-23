@@ -1,12 +1,13 @@
-import * as React from "react"
-import { Container, Form, Input, Button } from "./FormInput.styles"
+
+import * as React from "react";
+import { Container, Form, Input, Button } from "./FormInput.styles";
 
 interface IFormInputProps {
-  onValueChange: (e: string) => void
-  onButtonClick?: () => void
-  onEnter?: () => void
-  placeholder?: string
-  value: string
+  onValueChange: (e: string) => void;
+  onButtonClick?: () => void;
+  onEnter?: () => void;
+  placeholder?: string;
+  value: string;
 }
 
 const FormInput: React.FC<IFormInputProps> = ({
@@ -16,11 +17,13 @@ const FormInput: React.FC<IFormInputProps> = ({
   value,
   placeholder = "Enter something..."
 }) => {
-  const inputRef = React.useRef(null)
+  const inputRef = React.useRef<HTMLInputElement>(null);
 
   React.useEffect(() => {
-    inputRef.current.focus()
-  })
+     if (inputRef && inputRef.current) {
+       inputRef.current.focus();
+     }
+  });
 
   return (
     <Container>
@@ -39,7 +42,7 @@ const FormInput: React.FC<IFormInputProps> = ({
         <Button onClick={onButtonClick}>Submit</Button>
       </Form>
     </Container>
-  )
-}
+  );
+};
 
-export default FormInput
+export default FormInput;
