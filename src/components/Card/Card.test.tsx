@@ -1,6 +1,6 @@
-import * as React from "react";
-import Card from "./Card.component";
-import { render } from "@testing-library/react";
+import * as React from "react"
+import Card from "./Card.component"
+import { render } from "@testing-library/react"
 
 test("renders card and accepts props", () => {
   const card = render(

@@ -1,3 +1,4 @@
+
 import * as React from "react";
 import { Container, Form, Input, Button } from "./FormInput.styles";
 
@@ -18,11 +19,11 @@ const FormInput: React.FC<IFormInputProps> = ({
 }) => {
   const inputRef = React.useRef<HTMLInputElement>(null);
 
-  // React.useEffect(() => {
-  //   if (inputRef && inputRef.current) {
-  //     inputRef.current.focus();
-  //   }
-  // });
+  React.useEffect(() => {
+     if (inputRef && inputRef.current) {
+       inputRef.current.focus();
+     }
+  });
 
   return (
     <Container>

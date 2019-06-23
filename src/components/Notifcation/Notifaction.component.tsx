@@ -1,5 +1,5 @@
-import * as React from "react";
-import { Card } from "../";
+import * as React from "react"
+import { Card } from "../"
 
 const Notification: React.FC<{ msg: string }> = ({ msg }) => {
   return (
@@ -9,4 +9,4 @@ const Notification: React.FC<{ msg: string }> = ({ msg }) => {
   );
 };
 
-export default Notification;
+export default Notification
