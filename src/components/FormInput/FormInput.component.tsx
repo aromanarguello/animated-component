@@ -18,9 +18,9 @@ const FormInput: React.FC<IFormInputProps> = ({
 }) => {
   const inputRef = React.useRef(null);
 
-  React.useEffect(() => {
-    inputRef.current.focus();
-  });
+  // React.useEffect(() => {
+  //   inputRef.current.focus();
+  // });
 
   return (
     <Container>
