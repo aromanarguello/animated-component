@@ -22,14 +22,21 @@ const App: React.FC<any> = () => {
     opacity: 1,
     color: inputValue === "" ? "red" : "green",
     config: {
+      mass: 100,
       tension: 350,
       friction: 300
     }
   }))
 
   set({
-    opacity: isActive ? 1 : 0
+    opacity: isActive ? 1 : 0,
+    color: inputValue === "" ? "red" : "green"
   })
+
+  const handleOnClick = (e: React.MouseEvent) => {
+    e.preventDefault()
+    setIsActive(!isActive)
+  }
 
   return (
     <Layout>
@@ -37,7 +44,7 @@ const App: React.FC<any> = () => {
         <Header>Enter text</Header>
         <FormInput
           onValueChange={setInputValue}
-          onButtonClick={() => setIsActive(!isActive)}
+          onButtonClick={handleOnClick}
           onEnter={noop}
           value={inputValue}
         />

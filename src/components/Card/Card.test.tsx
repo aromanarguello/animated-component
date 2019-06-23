@@ -7,6 +7,6 @@ test("renders card and accepts props", () => {
     <Card width={500} height={100}>
       Welcome
     </Card>
-  );
-  expect(card.container.innerHTML).toMatch("Welcome");
-});
+  )
+  expect(card.container.innerHTML).toMatch("Welcome")
+})

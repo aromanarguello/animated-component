@@ -3,7 +3,7 @@ import { Container, Form, Input, Button } from "./FormInput.styles"
 
 interface IFormInputProps {
   onValueChange: (e: string) => void
-  onButtonClick?: () => void
+  onButtonClick?: (e: React.MouseEvent) => void
   onEnter?: () => void
   placeholder?: string
   value: string
@@ -35,7 +35,7 @@ const FormInput: React.FC<IFormInputProps> = ({
             placeholder={placeholder}
             onKeyPress={onEnter}
             value={value}
-            onChange={e => onValueChange(e.target.value)}
+            onChange={(e: any) => onValueChange(e.target.value)}
           />
         </label>
         <Button onClick={onButtonClick}>Submit</Button>
