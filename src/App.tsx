@@ -1,6 +1,8 @@
 import * as React from "react"
 import { Card, FormInput, Notification } from "./components"
-import { useSpring, animated } from "react-spring"
+import { useSpring, animated, useTransition } from "react-spring"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faCheck } from "@fortawesome/free-solid-svg-icons"
 import styled from "styled-components"
 
 const Layout = styled.div`
@@ -12,11 +14,21 @@ const Layout = styled.div`
 
 const Header = styled.h1``
 
+const Icon = styled(FontAwesomeIcon)`
+  color: green;
+`
+
 const noop = () => {}
 
 const App: React.FC<any> = () => {
   const [inputValue, setInputValue] = React.useState("")
   const [isActive, setIsActive] = React.useState(false)
+
+  const transitions = useTransition(isActive, null, {
+    from: { opacity: 0 },
+    enter: { opacity: 0 },
+    leave: { opacity: 1 }
+  })
 
   const [props, set] = useSpring(() => ({
     opacity: 1,
@@ -48,6 +60,14 @@ const App: React.FC<any> = () => {
           onEnter={noop}
           value={inputValue}
         />
+        {transitions.map(
+          ({ item, key, props }) =>
+            item && (
+              <animated.div key={key} style={props}>
+                <Icon icon={faCheck} />
+              </animated.div>
+            )
+        )}
       </Card>
       <animated.div style={props}>
         <Notification msg={inputValue === "" ? "Enter Text" : "Success"} />
